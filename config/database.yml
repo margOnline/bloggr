@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: blogger_development
+
+test:
+  <<: *default
+  database: blogger_test
+
+production:
+  <<: *default
+  database: blogger_production
