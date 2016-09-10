@@ -1,0 +1,5 @@
+- @posts.each do |post|
+  %div
+    =post.message
+    =post.user.username
+    ="#{distance_of_time_in_words(Time.now, post.created_at)} ago"
