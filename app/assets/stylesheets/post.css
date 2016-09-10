@@ -2,30 +2,59 @@ body{
   font-family: 'Helvetica', sans-serif;
   color: #666;
 }
+a{
+  color: #d4d4d4;
+  font-size: 14px;
+  text-decoration: none;
+}
+a:hover{
+  font-style: italic;
+}
 .container{
   width: 50%;
   margin: 50px auto;
-  font-size: 18px;
+  font-size: 16px;
 }
 .add-post{
-  margin-bottom: 20px;
+  width: 50%;
+  margin: 20px auto;
 }
-.post-container{
+.timeline{
   border-radius: 5px;
-  background-color: #f7f7f7;
-  margin:20px 20px 0;
-  padding:10px;
+  margin: 20px 20px 0;
+  padding: 10px;
+}
+.timeline > p{
+  text-align: center;
 }
 .post{
-  border-bottom: 1px solid #666;
+  overflow: hidden;
+  border-bottom: 1px solid #e5e5e5;
 }
-.post .meta{
-  font-size: 14px;
-}
-.meta .name{
-  font-weight: bold;
+.post > p{
+  width: 75%;
   float: left;
+  margin: 5px 0;
+  padding: 5px 0;
 }
 .time{
+  font-size: 12px;
+  width: 20%;
   float: right;
+  padding: 10px 0;
+  margin-left: 10px;
+}
+.post > a{
+  width: 20%;
+  float: right;
+}
+.error, .success{
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.error{
+  color: #c00;
+}
+.success{
+  color: green;
 }

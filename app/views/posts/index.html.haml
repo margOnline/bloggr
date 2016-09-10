@@ -1,14 +1,19 @@
 .container
   .add-post
-    = form_for :post do |f|
-      = f.text_area :message, cols: 50
-      .div
-        = f.button 'Post', class: 'btn btn-success'
-
-  .post-container
-    - @posts.each do |post|
-      .post
-        .meta
-          .name=post.user.username
-          .time="#{distance_of_time_in_words(Time.now, post.created_at)} ago"
-        %p=simple_format(post.message)
+    -if flash
+      %div{class: flash.keys.first}
+        =flash[flash.keys.first]
+    =form_for :post do |f|
+      =f.text_area :message, cols: 30, rows: 5, placeholder: '150 characters max'
+      .div=f.button 'Post', class: 'btn btn-success'
+  .timeline
+    -if @posts.any?
+      - @posts.each do |post|
+        .post
+          =simple_format(post.message)  
+          .time=format_time(post.created_at)      
+          =link_to post_path(post), class: 'delete', method: :delete do 
+            delete
+    -else
+      %p No messages have been posted
+          

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create, :delete] do
-    resources :posts, only: [:index, :new, :create, :delete]
-  end
+  resources :posts, only: [:index, :new, :create, :destroy]
   root 'posts#index'
 end
