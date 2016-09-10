@@ -1,5 +1,14 @@
-- @posts.each do |post|
-  %div
-    =post.message
-    =post.user.username
-    ="#{distance_of_time_in_words(Time.now, post.created_at)} ago"
+.container
+  .add-post
+    = form_for :post do |f|
+      = f.text_area :message, cols: 50
+      .div
+        = f.button 'Post', class: 'btn btn-success'
+
+  .post-container
+    - @posts.each do |post|
+      .post
+        .meta
+          .name=post.user.username
+          .time="#{distance_of_time_in_words(Time.now, post.created_at)} ago"
+        %p=simple_format(post.message)
