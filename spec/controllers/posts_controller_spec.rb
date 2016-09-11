@@ -8,7 +8,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe '#create' do
     describe 'successfully with attributes completed' do
-      it 'saves the post and redirects to the home page with a success message' do
+      it 'saves the post and redirects to homepage with a success message' do
         expect do
           post :create, post: { message: 'message' }
         end.to change(Post, :count).by(1)
@@ -18,7 +18,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     describe 'unsuccessfully with no attributes completed' do
-      it 'does not save the post and redirects to homepage with an error message' do
+      it 'assigns an error message and redirects to homepage' do
         expect do
           post :create, post: { message: nil }
         end.to change(Post, :count).by(0)

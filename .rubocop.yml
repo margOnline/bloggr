@@ -10,3 +10,10 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+
+Metrics/LineLength:
+  Exclude:
+    - Rakefile
+    - config/**/**.*
+    - bin/spring
+    - spec/rails_helper.rb

@@ -11,7 +11,7 @@ Prototype to demo a micro blogging service where users can post messages of up t
 </ol>
 <h4>Technical Configuration</h4>
 <ul>
-  <li>[Rails](http://rubyonrails.org/) based application</li>
+  <li>Rails application</li>
   <li>Languages - Ruby, Haml</li>
   <li>Database - PostgreSQL</li>
 </ul>

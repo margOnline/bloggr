@@ -7,12 +7,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       flash[:success] = 'Message posted'
-      redirect_to root_url
     else
-      error_message = @post.errors.full_messages.join("\n")
-      flash[:error] = error_message
-      redirect_to root_url
+      flash[:error] = @post.errors.full_messages.join("\n")
     end
+    redirect_to root_url
   end
 
   def destroy
@@ -23,6 +21,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:message)
   end
